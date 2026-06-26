@@ -153,4 +153,6 @@ historical_df.to_csv("historical_weather.csv", index=False)
 forecast_df.to_csv("forecast_weather.csv", index=False)
 print("\nData saved to CSV files.")
 
+df = pd.read_csv("daily_log.csv", skipinitialspace=True)
+df["datetime"] = pd.to_datetime(df["time"])
 generate_dashboard(df)
